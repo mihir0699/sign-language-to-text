@@ -68,8 +68,8 @@ early_stop = EarlyStopping(monitor='val_loss', min_delta=0, patience=2, verbose=
 
 
 model.compile(optimizer=SGD(learning_rate=0.001), loss='categorical_crossentropy', metrics=['accuracy'])
-reduce_lr = ReduceLROnPlateau(monitor='val_loss', factor=0.2, patience=1, min_lr=0.0005)
-early_stop = EarlyStopping(monitor='val_loss', min_delta=0, patience=2, verbose=0, mode='auto')
+# reduce_lr = ReduceLROnPlateau(monitor='val_loss', factor=0.2, patience=1, min_lr=0.0005)
+# early_stop = EarlyStopping(monitor='val_loss', min_delta=0, patience=2, verbose=0, mode='auto')
 
 
 history2 = model.fit(train_batches, epochs=10, callbacks=[reduce_lr, early_stop])#, checkpoint])
